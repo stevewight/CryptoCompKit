@@ -1,13 +1,12 @@
 # CryptoCompKit
-Unofficial client library for accessing *cryptocompare.com*'s market data
+Unofficial client library for accessing [*CryptoCompare.com's*](https://www.cryptocompare.com/) market data
 
 ## Getting Started
-[CryptoCompare.com](https://www.cryptocompare.com/)
 
 ### The Docs
 Take a look at their [API docs](https://www.cryptocompare.com/api) for an overview and more information on the publicly available currency data.
 
-Note: CryptoCompKit currently makes a limited subset of api endpoints available.  More to be added.
+Note: *CryptoCompKit* currently makes a limited subset of api endpoints available.  More to be added.
 
 ## Installation
 
@@ -39,7 +38,7 @@ cryptoCompKit.coinList { list, result in
 ```swift
 let from = ["BTC","ETH","LTC"]
 let to = ["USD"]
-cryptoCompKit.priceList(fSyms:from, tSyms:to) { list, result
+cryptoCompKit.priceList(fSyms:from, tSyms:to) { list, result in
 	switch result {
 	case .success(_):
 		updateUI(prices:list.prices)
@@ -50,6 +49,16 @@ cryptoCompKit.priceList(fSyms:from, tSyms:to) { list, result
 ```
 
 ### List of Historical Minutes (Candles)
+```swift
+cryptoCompKit.histoMinutes(fSym:"USD", tSym:"BTC") { list, result in
+	switch result {
+	case .success(_):
+		updateUI(minutes:list.histos)
+	case .failure(_):
+		handle(error:error)
+	}
+}
+```
 
 ## Pre-Release Version
 This is a pre-release version of *CryptoCompKit* and although it is stable and should be working in all the above cases, things will be added, changed and potentially break.
