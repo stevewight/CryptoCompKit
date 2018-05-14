@@ -20,6 +20,8 @@ let cryptoCompKit = CryptoCompKit()
 
 Once you have a ``CryptoCompKit()`` object instance, you can call an end point:
 
+### List of Coins
+
 ```swift
 cryptoCompKit.coinList { list, result in
   switch result {
@@ -32,8 +34,25 @@ cryptoCompKit.coinList { list, result in
 
 ```
 
+### List of Prices
+
+```swift
+let from = ["BTC","ETH","LTC"]
+let to = ["USD"]
+cryptoCompKit.priceList(fSyms:from, tSyms:to) { list, result
+	switch result {
+	case .success(_):
+		updateUI(prices:list.prices)
+	case .failure(_):
+		handle(error:error)
+	}
+}
+```
+
+### List of Historical Minutes (Candles)
 
 ## Pre-Release Version
+This is a pre-release version of *CryptoCompKit* and although it is stable and should be working in all the above cases, things will be added, changed and potentially break.
 
 ## License
 *CryptoCompKit* is released under the **MIT** license
