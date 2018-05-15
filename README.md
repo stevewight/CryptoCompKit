@@ -9,6 +9,25 @@ Take a look at their [API docs](https://www.cryptocompare.com/api) for an overvi
 Note: *CryptoCompKit* currently makes a limited subset of api endpoints available.  More to be added.
 
 ## Installation
+The easiest way to use *CryptoCompKit* is with CocoaPods
+
+### Installation with CocoaPods
+To integrate *CryptoCompKit* into your Xcode project using CocoaPods, specify it in your `Podfile`:
+
+```ruby
+platform :ios, '11.0'
+
+target 'TargetName' do
+  pod 'CryptoCompKit', :git => 'https://github.com/stevewight/CryptoCompKit.git'
+end
+```
+
+Then, run the following command:
+
+```bash
+$ pod install
+```
+
 
 ## Usage
 All market end points are accesed through the *CryptoCompKit* class:
