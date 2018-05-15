@@ -12,6 +12,8 @@ public class CryptoCompKit {
 
     let request = Request()
     
+    public init() { }
+    
     public func coinList(complete:@escaping (_ coinList:CoinList,_ result:Result<Any>)->Void) {
         request.run(router: Router.coinList(), factory: Factory.coinList) { result in
             if let coinList = result.value() as? CoinList {

@@ -9,7 +9,7 @@
 import UIKit
 
 public class HistoList:Codable, Response {
-    var histos = [HistoData]()
+    public var histos = [HistoData]()
     
     enum CodingKeys: String, CodingKey {
         case histos = "Data"

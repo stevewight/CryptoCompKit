@@ -9,7 +9,7 @@
 import UIKit
 
 public class PriceList:Codable, Response {
-    var prices = [String:[String:PriceData]]()
+    public var prices = [String:[String:PriceData]]()
 
     enum CodingKeys: String, CodingKey {
         case prices = "RAW"

@@ -9,35 +9,35 @@
 import UIKit
 
 public class PriceData:Codable {
-    var type = ""
-    var market = ""
-    var fromSymbol = ""
-    var toSymbol = ""
-    var flags = ""
-    var price = 0.0
-    var lastUpdate = 0
-    var lastVolume = 0.0
-    var lastVolumeTo = 0.0
-    var lastTradeID = ""
-    var volumeDay = 0.0
-    var volumeDayTo = 0.0
-    var volume24Hour = 0.0
-    var volume24HourTo = 0.0
-    var openDay = 0.0
-    var highDay = 0.0
-    var lowDay = 0.0
-    var open24Hour = 0.0
-    var high24Hour = 0.0
-    var low24Hour = 0.0
-    var lastMarket = ""
-    var change24Hour = 0.0
-    var changePercent24Hour = 0.0
-    var changeDay = 0.0
-    var changePercentDay = 0.0
-    var supply = 0.0
-    var marketCap = 0.0
-    var totalVolume24Hour = 0.0
-    var totalVolume24HourTo = 0.0
+    public var type = ""
+    public var market = ""
+    public var fromSymbol = ""
+    public var toSymbol = ""
+    public var flags = ""
+    public var price = 0.0
+    public var lastUpdate = 0
+    public var lastVolume = 0.0
+    public var lastVolumeTo = 0.0
+    public var lastTradeID = ""
+    public var volumeDay = 0.0
+    public var volumeDayTo = 0.0
+    public var volume24Hour = 0.0
+    public var volume24HourTo = 0.0
+    public var openDay = 0.0
+    public var highDay = 0.0
+    public var lowDay = 0.0
+    public var open24Hour = 0.0
+    public var high24Hour = 0.0
+    public var low24Hour = 0.0
+    public var lastMarket = ""
+    public var change24Hour = 0.0
+    public var changePercent24Hour = 0.0
+    public var changeDay = 0.0
+    public var changePercentDay = 0.0
+    public var supply = 0.0
+    public var marketCap = 0.0
+    public var totalVolume24Hour = 0.0
+    public var totalVolume24HourTo = 0.0
     
     enum CodingKeys: String, CodingKey {
         case type = "TYPE"

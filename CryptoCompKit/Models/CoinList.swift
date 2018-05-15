@@ -9,9 +9,9 @@
 import UIKit
 
 public class CoinList:Codable, Response {
-    var coins = [String:CoinData]()
-    var baseImageURL = ""
-    var baseLinkURL = ""
+    public var coins = [String:CoinData]()
+    public var baseImageURL = ""
+    public var baseLinkURL = ""
     
     enum CodingKeys: String, CodingKey {
         case coins = "Data"

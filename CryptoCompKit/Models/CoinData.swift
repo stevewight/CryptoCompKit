@@ -9,16 +9,16 @@
 import UIKit
 
 public class CoinData:Codable {
-    var id = ""
-    var url = ""
-    var imageURL:String?
-    var name = ""
-    var symbol = ""
-    var coinName = ""
-    var fullName = ""
-    var algorithm = ""
-    var proofType = ""
-    var sortOrder = ""
+    public var id = ""
+    public var url = ""
+    public var imageURL:String?
+    public var name = ""
+    public var symbol = ""
+    public var coinName = ""
+    public var fullName = ""
+    public var algorithm = ""
+    public var proofType = ""
+    public var sortOrder = ""
     
     
     enum CodingKeys: String, CodingKey {
