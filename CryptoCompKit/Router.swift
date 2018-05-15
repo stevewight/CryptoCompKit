@@ -12,6 +12,12 @@ protocol URLRequestProtocol {
     func url()->URL
 }
 
+enum RouterPath:String {
+    case coinList = "all/coinlist"
+    case priceList = "pricemultifull"
+    case histoMinute = "histominute"
+}
+
 enum Router:URLRequestProtocol {
     static let baseURL = "https://min-api.cryptocompare.com/data/"
     
@@ -35,18 +41,18 @@ enum Router:URLRequestProtocol {
     }
     
     private func urlComponents()->URLComponents {
-        let url = Router.baseURL + path()
+        let url = Router.baseURL + path().rawValue
         return URLComponents(string: url)!
     }
     
-    private func path()->String {
+    private func path()->RouterPath {
         switch self {
         case .coinList:
-            return "all/coinlist"
+            return RouterPath.coinList
         case .priceList(_,_):
-            return "pricemultifull"
+            return RouterPath.priceList
         case .histoMinute(_,_):
-            return "histominute"
+            return RouterPath.histoMinute
         }
     }
     
