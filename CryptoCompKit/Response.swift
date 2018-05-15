@@ -10,6 +10,4 @@ import UIKit
 
 public protocol Response { }
 
-public class BlankResponse: Response {
-    
-}
+public class BlankResponse: Response { }

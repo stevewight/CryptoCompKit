@@ -36,7 +36,6 @@ public class CryptoCompKit {
     public func histoMinutes(fSym:String, tSym:String, complete:@escaping (_ histoList:HistoList,_ result:Result<Any>)->Void) {
         let router = Router.histoMinute(fSym:fSym, tSym:tSym)
         request.run(router: router, factory: Factory.histoMinute) { result in
-            print("histoMinute complete")
             if let histoList = result.value() as? HistoList {
                 complete(histoList, result)
             } else {

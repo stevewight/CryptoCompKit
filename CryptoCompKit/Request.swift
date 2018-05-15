@@ -23,19 +23,10 @@ class Request {
             let response = response as? HTTPURLResponse
             let result:Result<Any>!
             
-            print("***********************")
-            if let d = data {
-                if let str = String(data:d, encoding: .utf8) {
-                    print("str: \(str)")
-                }
-            }
-            print("***********************")
-            
             if response?.statusCode == 200 {
                 let item = factory.build(data!)
                 result = Result.success(item)
             } else {
-                print("Incorrect status code")
                 result = Result.failure(RequestError.statusCode)
             }
             complete(result)

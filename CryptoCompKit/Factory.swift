@@ -26,7 +26,6 @@ enum Factory {
                 return response
             }
         } catch let error {
-            print("Error decoding...")
             dump(error)
         }
         return BlankResponse()
