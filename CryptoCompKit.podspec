@@ -9,9 +9,9 @@
 Pod::Spec.new do |s|
   s.name         = "CryptoCompKit"
   s.version      = "0.0.1"
-  s.summary      = "A short description of CryptoCompKit."
+  s.summary      = "Client library for cryptocompare.com's API"
 
-  s.homepage     = "http://EXAMPLE/CryptoCompKit"
+  s.homepage     = "https://github.com/stevewight/CryptoCompKit"
   s.license      = "MIT"
   s.author             = { "Steve Wight" => "stevendouglaswight@gmail.com" }
   s.platform     = :ios, "11.0"
