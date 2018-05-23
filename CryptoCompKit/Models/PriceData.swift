@@ -70,4 +70,45 @@ public class PriceData:Codable {
         case totalVolume24Hour = "TOTALVOLUME24H"
         case totalVolume24HourTo = "TOTALVOLUME24HTO"
     }
+    
+    public required init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        type = try values.decode(String.self, forKey: .type)
+        market = try values.decode(String.self, forKey: .market)
+        fromSymbol = try values.decode(String.self, forKey: .fromSymbol)
+        toSymbol = try values.decode(String.self, forKey: .toSymbol)
+        flags = try values.decode(String.self, forKey: .flags)
+        price = try values.decode(Double.self, forKey: .price)
+        do {
+            lastUpdate = try values.decode(Int.self, forKey: .lastUpdate)
+            lastVolume = try values.decode(Double.self, forKey: .lastVolume)
+            lastVolumeTo = try values.decode(Double.self, forKey: .lastVolumeTo)
+            lastTradeID = try values.decode(String.self, forKey: .lastTradeID)
+        } catch { print("error handling last data") }
+        do {
+            volumeDay = try values.decode(Double.self, forKey: .volumeDay)
+            volumeDayTo = try values.decode(Double.self, forKey: .volumeDayTo)
+            volume24Hour = try values.decode(Double.self, forKey: .volume24Hour)
+            volume24HourTo = try values.decode(Double.self, forKey: .volume24HourTo)
+        } catch { print("error handling volume data") }
+        do {
+            openDay = try values.decode(Double.self, forKey: .openDay)
+            highDay = try values.decode(Double.self, forKey: .highDay)
+            lowDay = try values.decode(Double.self, forKey: .lowDay)
+            open24Hour = try values.decode(Double.self, forKey: .open24Hour)
+            high24Hour = try values.decode(Double.self, forKey: .high24Hour)
+            low24Hour = try values.decode(Double.self, forKey: .low24Hour)
+            lastMarket = try values.decode(String.self, forKey: .lastMarket)
+        } catch { print("error handling price data") }
+        do {
+            change24Hour = try values.decode(Double.self, forKey: .change24Hour)
+            changePercent24Hour = try values.decode(Double.self, forKey: .changePercent24Hour)
+            changeDay = try values.decode(Double.self, forKey: .changeDay)
+            changePercentDay = try values.decode(Double.self, forKey: .changePercentDay)
+            supply = try values.decode(Double.self, forKey: .supply)
+            marketCap = try values.decode(Double.self, forKey: .marketCap)
+            totalVolume24Hour = try values.decode(Double.self, forKey: .totalVolume24Hour)
+            totalVolume24HourTo = try values.decode(Double.self, forKey: .totalVolume24HourTo)
+        } catch { print("error handling price data") }
+    }
 }
