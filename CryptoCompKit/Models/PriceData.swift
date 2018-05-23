@@ -84,13 +84,13 @@ public class PriceData:Codable {
             lastVolume = try values.decode(Double.self, forKey: .lastVolume)
             lastVolumeTo = try values.decode(Double.self, forKey: .lastVolumeTo)
             lastTradeID = try values.decode(String.self, forKey: .lastTradeID)
-        } catch { print("error handling last data") }
+        } catch { }
         do {
             volumeDay = try values.decode(Double.self, forKey: .volumeDay)
             volumeDayTo = try values.decode(Double.self, forKey: .volumeDayTo)
             volume24Hour = try values.decode(Double.self, forKey: .volume24Hour)
             volume24HourTo = try values.decode(Double.self, forKey: .volume24HourTo)
-        } catch { print("error handling volume data") }
+        } catch { }
         do {
             openDay = try values.decode(Double.self, forKey: .openDay)
             highDay = try values.decode(Double.self, forKey: .highDay)
@@ -99,7 +99,7 @@ public class PriceData:Codable {
             high24Hour = try values.decode(Double.self, forKey: .high24Hour)
             low24Hour = try values.decode(Double.self, forKey: .low24Hour)
             lastMarket = try values.decode(String.self, forKey: .lastMarket)
-        } catch { print("error handling price data") }
+        } catch { }
         do {
             change24Hour = try values.decode(Double.self, forKey: .change24Hour)
             changePercent24Hour = try values.decode(Double.self, forKey: .changePercent24Hour)
@@ -109,6 +109,6 @@ public class PriceData:Codable {
             marketCap = try values.decode(Double.self, forKey: .marketCap)
             totalVolume24Hour = try values.decode(Double.self, forKey: .totalVolume24Hour)
             totalVolume24HourTo = try values.decode(Double.self, forKey: .totalVolume24HourTo)
-        } catch { print("error handling price data") }
+        } catch { }
     }
 }
