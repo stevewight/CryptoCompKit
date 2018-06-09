@@ -8,14 +8,14 @@
 
 Pod::Spec.new do |s|
   s.name         = "CryptoCompKit"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "Client library for cryptocompare.com's API"
 
   s.homepage     = "https://github.com/stevewight/CryptoCompKit"
-  s.license      = "MIT"
-  s.author             = { "Steve Wight" => "stevendouglaswight@gmail.com" }
+  s.license      = { :type => "MIT", :file => "LICENSE" }
+  s.author       = { "Steve Wight" => "stevendouglaswight@gmail.com" }
   s.platform     = :ios, "11.0"
-  s.source       = { :git => "https://github.com/CryptoCompKit.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/stevewight/CryptoCompKit.git", :tag => "#{s.version}" }
 
 
   s.source_files  = "CryptoCompKit/**/*.{h,m,swift}"
